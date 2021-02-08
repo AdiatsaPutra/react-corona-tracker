@@ -3,6 +3,7 @@ import React from 'react';
 import {Cards, Chart, CountryPicker} from './components';
 import styles from './App.module.css';
 import {fetchData} from './api';
+import {Grid, Typography} from '@material-ui/core';
 
 class App extends React.Component{
 
@@ -23,10 +24,17 @@ class App extends React.Component{
         const {data} = this.state;
 
         return(
-            <div className={styles.container}>
+            <div>
+                <div className={styles.wrapper}>
+                <Typography variant="h3">Informasi Covid-19</Typography>
+                <Typography variant="body1">Data Covid-19 seluruh dunia</Typography>
+                <Typography color="textSecondary" variant="body2">{data.lastUpdate}</Typography>
+                <div className={styles.container}>
                 <Cards data={data}/>
-                <CountryPicker/>
-                <Chart/>
+                {/* <CountryPicker/>
+                <Chart/> */}
+                 </div>
+                 </div>
             </div>
         )
     }
