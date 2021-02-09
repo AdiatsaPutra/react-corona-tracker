@@ -1,6 +1,18 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react';
+import {fetchDailyData} from '../../api';
+import { Line, Bar } from "react-chartjs-2";
 
-export const Chart = () => {
+import styles from './Chart.module.css';
+
+const Chart = () => {
+    const [dailyData, setDailyData] = useState({});
+
+    useEffect(() => {
+        const getDailyData = async () => {
+            setDailyData(await fetchDailyData);
+        }
+        getDailyData();
+    });
     return (
         <div>
             Chart

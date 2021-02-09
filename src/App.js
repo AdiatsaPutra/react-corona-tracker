@@ -26,14 +26,14 @@ class App extends React.Component{
         return(
             <div>
                 <div className={styles.wrapper}>
-                <Typography variant="h3">Informasi Covid-19</Typography>
-                <Typography variant="body1">Data Covid-19 seluruh dunia</Typography>
-                <Typography color="textSecondary" variant="body2">{data.lastUpdate}</Typography>
-                <div className={styles.container}>
-                <Cards data={data}/>
-                {/* <CountryPicker/>
-                <Chart/> */}
-                 </div>
+                    <Typography variant="h3">Informasi Covid-19</Typography>
+                    <Typography variant="body1">Terakhir diperbarui tangal: {new Date(data.lastUpdate).toLocaleDateString()} pukul {new Date(data.lastUpdate).toLocaleTimeString().substring(0, 8)}</Typography>
+                    <Typography variant="h6">Data Covid-19 seluruh dunia</Typography>
+                        <div className={styles.container}>
+                        <Cards data={data}/>
+                        {/* <CountryPicker/>
+                        <Chart/> */}
+                        </div>
                  </div>
             </div>
         )

@@ -1,10 +1,11 @@
 .container {
     margin: 50px 0px;
+    text-align: start;
 }
 
 .card {
     width: 300px !important;
-    margin: 0 10px !important;
+    margin: 10px !important;
 }
 
 .infected{

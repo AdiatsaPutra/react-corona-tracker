@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, CardContent, Typography, Grid} from '@material-ui/core';
 import CountUp from 'react-countup'
 import classNames from 'classnames';
-import classes from './Cards.module.css';
+import styles from './Cards.module.css';
 
 export const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
     console.log(lastUpdate);
@@ -11,30 +11,30 @@ export const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
         return 'Loading...';
     }
     return (
-        <div className={classes.container}>
+        <div className={styles.container}>
             <Grid container spacing={3} justify="center"> 
-                <Grid item component={Card} xs={12} md={3} className={classNames(classes.card, classes.infected)}>
+                <Grid item component={Card} xs={12} md={3} className={classNames(styles.card, styles.infected)}>
                     <CardContent>
-                        <Typography variant="h4" className={classNames(classes.infectedData)}>
+                        <Typography variant="h4" className={classNames(styles.infectedData)}>
                             <CountUp start={0} end={confirmed.value} duration={3.5} separator="," />
                         </Typography>
-                        <Typography variant="body2">Positif Covid</Typography>
+                        <Typography variant="body2" className={classNames(styles.information)}>Positif Covid</Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={classNames(classes.card, classes.recovered)}>
+                <Grid item component={Card} xs={12} md={3} className={classNames(styles.card, styles.recovered)}>
                     <CardContent>
-                        <Typography variant="h4" className={classNames(classes.recoveredData)}>
+                        <Typography variant="h4" className={classNames(styles.recoveredData)}>
                             <CountUp start={0} end={recovered.value} duration={3.5} separator="," />
                         </Typography>
-                        <Typography variant="body2">Sembuh dari Covid</Typography>
+                        <Typography variant="body2" className={classNames(styles.information)}>Sembuh dari Covid</Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={classNames(classes.card, classes.deaths)}>
+                <Grid item component={Card} xs={12} md={3} className={classNames(styles.card, styles.deaths)}>
                     <CardContent>
-                        <Typography variant="h4" className={classNames(classes.deathsData)}>
+                        <Typography variant="h4" className={classNames(styles.deathsData)}>
                             <CountUp start={0} end={deaths.value} duration={3.5} separator="," />
                         </Typography>
-                        <Typography variant="body2">Meninggal akibat Covid</Typography>
+                        <Typography variant="body2" className={classNames(styles.information)}>Meninggal akibat Covid</Typography>
                     </CardContent>
                 </Grid>
             </Grid>
